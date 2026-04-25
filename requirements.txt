@@ -1,0 +1,51 @@
+pandas
+numpy
+seaborn
+-e . 
+ #automatically triger setup.py (ye likha h taaki jab ham requiremnt.txt ke package install kre tabhi setup.py bhi run kre to build the packages)
+ #-e . = editable install of current project
+ '''🧠 Without -e . (normal install)
+pip install .
+
+👉 kya hota hai?
+
+tumhara project copy ho jata hai site-packages me
+agar tum code change karti ho → changes reflect nahi honge
+
+💥 Har change ke baad fir se install karna padega
+
+🟢 With -e .
+pip install -e .
+
+👉 kya hota hai?
+
+project link ho jata hai, copy nahi hota
+tum code change karo → directly reflect ho jata hai ✅
+
+pip install -e .
+
+👉 tab setup.py execute hota hai
+
+🟡 Requirements.txt me kyu likhte hain?
+pandas
+numpy
+seaborn
+-e .
+
+👉 jab tum run karti ho:
+
+pip install -r requirements.txt
+
+to ye automatically:
+
+dependencies install karega
+tumhara project editable mode me install karega
+
+👉 -e . dependencies nahi hai
+
+Isliye:
+
+install_requires = get_requirements(...)
+
+👉 isme -e . nahi jaana chahiye ❌
+'''
